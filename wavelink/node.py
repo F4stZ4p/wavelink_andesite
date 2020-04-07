@@ -138,15 +138,9 @@ class Node:
                 __log__.info(f'REST | No tracks with query:: <{query}> found.')
                 return None
 
-            if self.andesite:
+            if data['playlistInfo']['selectedTrack'] != None:
+                return TrackPlaylist(data=data)
 
-                if data['playlistInfo']['selectedTrack'] != None:
-                    return TrackPlaylist(data=data)
-
-            else:
-
-                if data['playlistInfo']:
-                    return TrackPlaylist(data=data)
 
             tracks = []
             for track in data['tracks']:
