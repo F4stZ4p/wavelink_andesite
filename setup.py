@@ -29,33 +29,11 @@ import re
 
 import setuptools
 
-ROOT = pathlib.Path(__file__).parent
-ON_RTD = os.getenv('READTHEDOCS') == 'True'
-
-
-with open(ROOT / 'requirements.txt', encoding='utf-8') as f:
-    REQUIREMENTS = f.readlines()
-
-if ON_RTD:
-    REQUIREMENTS.extend((
-        'pygments',
-        'sphinx==1.7.4',
-        'sphinxcontrib-asyncio',
-        'sphinxcontrib-napoleon',
-        'sphinxcontrib-websupport',
-    ))
-
-with open(ROOT / 'README.rst', encoding='utf-8') as f:
-    README = f.read()
-
-with open(ROOT / 'wavelink' / '__init__.py', encoding='utf-8') as f:
-    VERSION = re.search(r'^__version__\s*=\s*[\'"]([^\'"]*)[\'"]', f.read(), re.MULTILINE).group(1)
-
 setuptools.setup(
     name='wavelink',
     author='EvieePy',
     url='https://github.com/EvieePy/Wavelink',
-    version=VERSION,
+    version="0.0.0",
     packages=['wavelink'],
     license='MIT',
     description='A versatile LavaLink wrapper for Discord.py',
