@@ -61,9 +61,13 @@ class Stats:
         if not node.andesite:
 
             frame_stats = data.get('frameStats', {})
-            
+
             self.frames_sent = frame_stats.get('sent', -1)
             self.frames_nulled = frame_stats.get('nulled', -1)
             self.frames_deficit = frame_stats.get('deficit', -1)
+        
+        else:
+
+            self.frames_sent, self.frames_nulled, self.frames_deficit = -1
 
         self.penalty = Penalty(self)
