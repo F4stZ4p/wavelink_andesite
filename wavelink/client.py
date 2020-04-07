@@ -358,18 +358,18 @@ class Client:
                     shard_id=shard_id,
                     session=self.session,
                     client=self,
-                    secure=secure)
+                    secure=secure,
+                    andesite=andesite)
 
         await node.connect(bot=self.bot)
 
         node.available = True
 
         self.nodes[identifier] = node
-        self.andesite = andesite
 
         __log__.info(f'CLIENT | New node initiated:: {node.__repr__()} ')
-        
-        if self.andesite:
+
+        if andesite:
 
             __log__.info('CLIENT | This is an Andesite node')
 

@@ -56,7 +56,7 @@ class Node:
     """
 
     def __init__(self, host: str, port: int, shards: int, user_id: int, *, client, session, rest_uri: str, password: str,
-                 region: str, identifier: str, shard_id: int = None, secure: bool = False):
+                 region: str, identifier: str, shard_id: int = None, secure: bool = False, andesite: bool = False):
         self.host = host
         self.port = port
         self.rest_uri = rest_uri
@@ -64,6 +64,7 @@ class Node:
         self.uid = user_id
         self.password = password
         self.region = region
+        self.andesite = andesite
         self.identifier = identifier
         self.secure = secure
 
