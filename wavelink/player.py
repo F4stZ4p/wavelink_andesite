@@ -338,6 +338,20 @@ class Player:
         """
         await self.node._send(op='equalizer', guildId=str(self.guild_id), bands=equalizer.eq)
 
+    async def set_filter(self, music_filter: AndesiteFilter) -> None:
+
+        """
+        Sets the player filter
+        """
+
+        if not self.node.andesite: raise NotImplementedError("Lavalink does not have filters implemented")
+
+        self.node._send(
+            op='filters',
+            guildId=str(self.guild_id),
+            **music_filter.filter
+        )
+
     async def set_equalizer(self, equalizer: Equalizer) -> None:
         """|coro|
 
