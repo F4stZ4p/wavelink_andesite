@@ -132,7 +132,7 @@ class Node:
                                     headers={'Authorization': self.password}) as resp:
             data = await resp.json()
 
-            print(f"Data: {data}")
+            print(f"Data: {data['playlistInfo']}")
 
             if not data['tracks']:
                 __log__.info(f'REST | No tracks with query:: <{query}> found.')
