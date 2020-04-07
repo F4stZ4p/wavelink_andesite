@@ -68,6 +68,6 @@ class Stats:
         
         else:
 
-            self.frames_sent, self.frames_nulled, self.frames_deficit = -1
+            self.frames_sent, self.frames_nulled, self.frames_deficit = [-1, -1, -1]
 
         self.penalty = Penalty(self)
