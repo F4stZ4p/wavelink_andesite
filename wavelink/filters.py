@@ -26,9 +26,9 @@ class AndesiteFilter:
     Class represting filters for andesite-node
     """
 
-    def __repr__(self) -> dict:
+    def __repr__(self) -> str:
 
-        return self.filter
+        return "Andesite Filter"
 
     def __init__(self, parameters: dict):
 
