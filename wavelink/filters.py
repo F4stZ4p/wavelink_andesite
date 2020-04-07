@@ -29,6 +29,15 @@ class AndesiteFilter:
     def __init__(self, parameters: dict):
 
         self.filter = parameters
+
+    @classmethod
+    def build(cls, payload: dict):
+
+        """
+        Build andesite equalizer with given dictionary
+        """
+
+        return cls(payload)
     
     @classmethod
     def nightcore(cls):
@@ -44,7 +53,7 @@ class AndesiteFilter:
                     
                     "pitch": 1, 
                     "rate": 1.5
-                    
+
                 }
             
             }

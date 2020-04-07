@@ -28,6 +28,7 @@ from typing import Optional, Union
 
 from .errors import *
 from .eqs import *
+from .filters import *
 from .events import *
 
 
@@ -154,6 +155,8 @@ class Player:
 
         self.equalizers = {'FLAT': Equalizer.flat(), 'BOOST': Equalizer.boost(), 'METAL': Equalizer.metal(),
                            'PIANO': Equalizer.piano()}
+
+        self.filters = {'NIGHTCORE': AndesiteFilter.nightcore()}
 
     @property
     def is_connected(self) -> bool:
