@@ -132,14 +132,19 @@ class Node:
                                     headers={'Authorization': self.password}) as resp:
             data = await resp.json()
 
-            print(f"Data: {data['playlistInfo']}")
-
             if not data['tracks']:
                 __log__.info(f'REST | No tracks with query:: <{query}> found.')
                 return None
 
-            if data['playlistInfo']:
-                return TrackPlaylist(data=data)
+            if self.andesite:
+
+                if data['playlistInfo']['selectedTrack'] != None:
+                    return TrackPlaylist(data=data)
+
+            else:
+
+                if data['playlistInfo']:
+                    return TrackPlaylist(data=data)
 
             tracks = []
             for track in data['tracks']:
