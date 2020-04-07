@@ -36,7 +36,7 @@ setuptools.setup(
     version="0.0.0",
     packages=['wavelink'],
     license='MIT',
-    description='A versatile LavaLink wrapper for Discord.py',
+    description='A versatile LavaLink & Andesite wrapper for Discord.py',
     include_package_data=True,
     classifiers=[
         'License :: OSI Approved :: MIT License',
